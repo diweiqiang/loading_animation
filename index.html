@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*参考http://www.zhangxinxu.com/wordpress/2016/11/css-content-pre-animation-character-loading/*/
+        span{
+            background: darkcyan;
+            color:white;
+            padding:8px 5px;
+        }
+        dot {
+            display: inline-block;
+            height: 1em; line-height: 1;
+            text-align: left;
+            vertical-align: -.25em;
+            overflow: hidden;
+        }
+        dot::before {
+            display: block;
+            content: '...\a.\a..';
+            white-space: pre-wrap;   /* 也可以是white-space: pre */
+            animation: dot 3s infinite step-start both;
+        }
+        @keyframes dot {
+            33% { transform: translateY(-1em); }
+            66% { transform: translateY(-2em); }
+        }
+
+    </style>
+</head>
+<body>
+    <span>订单提交中<dot>...</dot></span>
+</body>
+</html>
