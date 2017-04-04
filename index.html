@@ -19,7 +19,8 @@
         }
         dot::before {
             display: block;
-            content: '...\a.\a..';
+            /*\a代表lf是换行符*/
+            content: '...\A.\A..';
             white-space: pre-wrap;   /* 也可以是white-space: pre */
             animation: dot 3s infinite step-start both;
         }
